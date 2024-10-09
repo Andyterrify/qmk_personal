@@ -1,0 +1,7 @@
+TRI_LAYER_ENABLE = yes
+CONVERT_TO=elite_pi
+
+CAPS_WORD_ENABLE = yes
+
+DEBOUNCE_TYPE = sym_defer_pr
+WPM_ENABLE = yes
