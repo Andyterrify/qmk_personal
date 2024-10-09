@@ -17,3 +17,7 @@
 #define USB_POLLING_INTERVAL_MS 1
 
 #define FORCE_NKRO
+
+#define OLED_BRIGHTNESS 128
+#define OLED_TIMEOUT 30000
+#define OLED_FADE_OUT yes
