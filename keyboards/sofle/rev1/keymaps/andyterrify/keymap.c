@@ -73,9 +73,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                      ,----------------------------------------.                    ,-----------------------------------------.
  *                                      | ____ | ____ | ____ | ____ | ____ | ____ |                    | ____ | ____ | ____ | ____ | ____ | ____ |
  *                                      |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- *                                      | ____ |  1   |  2   |  3   |  4   |  5   |                    |  6   |  7   |  8   |  9   |  0   | ____ |
- *                                      |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  *                                      | ____ | ____ | ____ | ____ |CPSTOG|CPSLCK|-------.    ,-------| <L>  | <D>  | <U>  | <R>  | Del  | ____ |
+ *                                      |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ *                                      | ____ |  1   |  2   |  3   |  4   |  5   |                    |  6   |  7   |  8   |  9   |  0   | ____ |
  *                                      |------+------+------+------+------+------| ____  |    | ____  |------+------+------+------+------+------|
  *                                      | ____ | ____ | ____ | ____ | ____ | ____ |-------|    |-------| Home | PGDN | PGUP | End  | Dot | ____  |
  *                                      `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -85,8 +85,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT(
 /* 1 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_BSPC,    /* # */
-/* 2 */ XXXXXXX,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,               /* SPLIT */             KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       XXXXXXX,    /* # */
 /* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    CW_TOGG,    KC_CAPS,            /* SPLIT */             KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_DEL,     XXXXXXX,     /* # */
+/* 2 */ XXXXXXX,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,               /* SPLIT */             KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       XXXXXXX,    /* # */
 /* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,  XXXXXXX,  /* SPLIT */ XXXXXXX,    KC_HOME,    KC_PGUP,    KC_PGDN,    KC_END,     KC_DOT,     XXXXXXX,     /* # */
 /* Special */                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       /* SPLIT */     XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, XXXXXXX                                     /* # */
 ),
