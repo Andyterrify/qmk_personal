@@ -6,15 +6,15 @@
 
 enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
-    _QWERTY,
+    _BASE,
     _LOWER,
     _RAISE,
-    _ADJUST,
     _GAME,
+    _ADJUST,
 };
 
 enum custom_keycodes {
-    KC_QWERTY = SAFE_RANGE,
+    KC_BASE = SAFE_RANGE,
     KC_LSTRT,
     KC_LEND
 };
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
 
-[_QWERTY] = LAYOUT(
+[_BASE] = LAYOUT(
 /* 1 */ XXXXXXX,  XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,      XXXXXXX,        /* SPLIT */           XXXXXXX, XXXXXXX,         XXXXXXX,         XXXXXXX,         XXXXXXX,             XXXXXXX, /* # */
 /* 2 */ QK_GESC,  KC_Q,         KC_W,         KC_E,         KC_R,         KC_T,           /* SPLIT */           KC_Y, KC_U,         KC_I,         KC_O,         KC_P,             KC_BSPC, /* # */
 /* 3 */ KC_TAB,   LCTL_T(KC_A), LSFT_T(KC_S), LGUI_T(KC_D), LALT_T(KC_F), KC_G,           /* SPLIT */           KC_H, RALT_T(KC_J), RGUI_T(KC_K), RSFT_T(KC_L), RCTL_T(KC_SCLN),  KC_QUOT, /* # */
@@ -47,12 +47,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* LOWER
 *  ,-----------------------------------------.                    ,-----------------------------------------.
-*  |` (¬) |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
+*  |      |      |      |      |      |      |                    |      |      |      |      |      |      |
 *  |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-*  | ____ | !    | "    | £    | $    |   %  |                    |   ^  |   &  |   *  | - (_)| = (+)| F12  |
+*  | ____ | F1   | F2   | F3   | F4   | F5   |                    | F6   | F7   | F8   | F9   | F10  | F11  |
 *  |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-*  | Tab  | _____| _____| _____|  ___ |   (  |-------.    ,-------|   )  | ____ |  #   |  |   |  ~   | ____ |
-*  |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
+*  | ____ | !    | "    | £    | $    |   %  |-------.            |   ^  |   &  |   *  | - (_)| = (+)| F12  |
+*  |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
 *  |  \   | ____ | ____ | ____ |   {  |  [   |-------|    |-------|  ]   |   }  |   :  | ____ | ____ |  #   |
 *  `-----------------------------------------/       /     \      \-----------------------------------------'
 *             | ____ | ____ | ____ |_____ | /_____  /       \_____ \  |_____ | _____| _____| ____ |
@@ -60,12 +60,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 *             `----------------------------------'           '------''---------------------------'
 */
 [_LOWER] = LAYOUT( /* This one is for symbols and misc */
+/* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
 /* 1 */ XXXXXXX,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,              /* SPLIT */             KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     /* # */
-/* 2 */ XXXXXXX,    UK_EXLM,    UK_DQUO,    UK_PND,     UK_DLR,     UK_PERC,            /* SPLIT */             UK_CIRC,    UK_AMPR,    UK_ASTR,    UK_MINS,    UK_EQL,     KC_F12,     /* # */
-/* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    UK_LPRN,            /* SPLIT */             UK_RPRN,    XXXXXXX,    UK_HASH,    KC_PIPE,    UK_TILD,    _______,    /* # */
-/* 4 */ UK_BSLS,    XXXXXXX,    XXXXXXX,    XXXXXXX,    UK_LCBR,    UK_LBRC, XXXXXXX,   /* SPLIT */ XXXXXXX,    UK_RBRC,    UK_RCBR,    UK_COLN,    _______,    _______,    UK_HASH,    /* # */
+/* 3 */ XXXXXXX,    KC_EXLM,    KC_DQUO,    UK_PND,     KC_DLR,     KC_PERC,            /* SPLIT */             KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_MINS,    KC_EQL,     KC_F12,     /* # */
+/* 4 */ KC_BSLS,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LCBR,    KC_LBRC, XXXXXXX,   /* SPLIT */ XXXXXXX,    KC_RBRC,    KC_RCBR,    KC_COLN,    _______,    _______,    KC_HASH,    /* # */
 /* Special */                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
+// /* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LPRN,            /* SPLIT */             KC_RPRN,    XXXXXXX,    KC_HASH,    KC_PIPE,    KC_TILD,    _______,    /* # */
 
 /* RAISE
  *
@@ -84,9 +85,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT(
 /* 1 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_BSPC,    /* # */
-/* 2 */ XXXXXXX,    UK_1,       UK_2,       UK_3,       UK_4,       UK_5,               /* SPLIT */             UK_6,       UK_7,       UK_8,       UK_9,       UK_0,       XXXXXXX,    /* # */
+/* 2 */ XXXXXXX,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,               /* SPLIT */             KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       XXXXXXX,    /* # */
 /* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    CW_TOGG,    KC_CAPS,            /* SPLIT */             KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_DEL,     XXXXXXX,     /* # */
-/* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,  XXXXXXX,  /* SPLIT */ XXXXXXX,    KC_HOME,    KC_PGUP,    KC_PGDN,    KC_END,     UK_DOT,     XXXXXXX,     /* # */
+/* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,  XXXXXXX,  /* SPLIT */ XXXXXXX,    KC_HOME,    KC_PGUP,    KC_PGDN,    KC_END,     KC_DOT,     XXXXXXX,     /* # */
 /* Special */                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       /* SPLIT */     XXXXXXX, XXXXXXX, KC_PSCR, XXXXXXX, XXXXXXX                                     /* # */
 ),
 /* ADJUST
@@ -105,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_ADJUST] = LAYOUT(
 /* 1 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
-/* 2 */ QK_BOOT,    XXXXXXX,    KC_QWERTY,  TG(_GAME),    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
+/* 2 */ QK_BOOT,    XXXXXXX,    XXXXXXX,  TG(_GAME),    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
 /* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    KC_VOLD,    KC_MUTE,    KC_VOLU,    XXXXXXX,    XXXXXXX,    /* # */
 /* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,   /* SPLIT */ XXXXXXX,    XXXXXXX,    KC_MPRV,    KC_MPLY,    KC_MNXT,    XXXXXXX,    XXXXXXX,    /* # */
 /* Special */                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        /* SPLIT */     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX                                     /* # */
@@ -128,10 +129,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_GAME] = LAYOUT(
-/* 1 */ QK_GESC,    UK_1,           KC_2,           UK_3,           UK_4,           UK_5,           /* SPLIT */             UK_6,   UK_7,           UK_8,           UK_9,           UK_0,               KC_BSPC, /* # */
+/* 1 */ QK_GESC,    KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           /* SPLIT */             KC_6,   KC_7,           KC_8,           KC_9,           KC_0,               KC_BSPC, /* # */
 /* 2 */ KC_TAB,     KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           /* SPLIT */             KC_Y,   KC_U,           KC_I,           KC_O,           KC_P,               XXXXXXX, /* # */
-/* 3 */ KC_LSFT,     KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           /* SPLIT */             KC_H,   KC_J,           KC_K,           KC_L,           UK_SCLN,            UK_QUOT, /* # */
-/* 4 */ KC_LCTL,    KC_Z,           KC_X,           KC_C,           KC_V,           KC_B, KC_MUTE,  /* SPLIT */ XXXXXXX,    KC_N,   KC_M,           UK_COMM,        UK_DOT,         UK_SLSH,            UK_HASH, /* # */
+/* 3 */ KC_LSFT,     KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           /* SPLIT */             KC_H,   KC_J,           KC_K,           KC_L,           KC_SCLN,            KC_QUOT, /* # */
+/* 4 */ KC_LCTL,    KC_Z,           KC_X,           KC_C,           KC_V,           KC_B, KC_MUTE,  /* SPLIT */ XXXXXXX,    KC_N,   KC_M,           KC_COMM,        KC_DOT,         KC_SLSH,            KC_HASH, /* # */
 /* Special */                                   XXXXXXX, XXXXXXX, KC_LALT, XXXXXXX,   KC_SPC,     /* SPLIT */     KC_ENT, MO(_RAISE), XXXXXXX, XXXXXXX, XXXXXXX
     ),
 
@@ -280,7 +281,7 @@ static void render_left_oled(void) {
     // oled_write_ln_P(PSTR("LIN"), false);
 
     switch (get_highest_layer(default_layer_state)) {
-        case _QWERTY:
+        case _BASE:
             oled_write_ln_P(PSTR("Qwrt"), false);
             break;
         default:
@@ -290,7 +291,7 @@ static void render_left_oled(void) {
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case _QWERTY:
+        case _BASE:
             oled_write_P(PSTR("Base\n"), false);
             break;
         case _RAISE:
