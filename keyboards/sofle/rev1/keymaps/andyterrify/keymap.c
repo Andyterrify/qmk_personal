@@ -105,8 +105,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [_ADJUST] = LAYOUT(
 /* 1 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
-/* 2 */ QK_BOOT,    XXXXXXX,    XXXXXXX,  TG(_GAME),    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
-/* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    KC_VOLD,    KC_MUTE,    KC_VOLU,    XXXXXXX,    XXXXXXX,    /* # */
+/* 2 */ QK_BOOT,    XXXXXXX,    XXXXXXX,  TG(_GAME),    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    KC_VOLD,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
+/* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LEFT,    KC_DOWN,            /* SPLIT */             KC_UP,    KC_RGHT,    KC_VOLD,    KC_VOLU,    KC_MUTE,    XXXXXXX,    /* # */
 /* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,   /* SPLIT */ XXXXXXX,    XXXXXXX,    KC_MPRV,    KC_MPLY,    KC_MNXT,    XXXXXXX,    XXXXXXX,    /* # */
 /* Special */                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        /* SPLIT */     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX                                     /* # */
   ),
