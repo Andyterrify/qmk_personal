@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT( /* This one is for symbols and misc */
 /* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
 /* 3 */ XXXXXXX,    KC_EXLM,    KC_DQUO,    KC_HASH,     KC_DLR,     KC_PERC,            /* SPLIT */             KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_MINS,    KC_EQL,     KC_F12,     /* # */
-/* 3 */ XXXXXXX,    XXXXXXX,    KC_GRV,    KC_LCBR,     KC_LPRN,     KC_LBRC,            /* SPLIT */             KC_RBRC,    KC_RPRN,    KC_RCBR,    KC_TILD,    KC_AT,     XXXXXXX,     /* # */
+/* 3 */ XXXXXXX,    XXXXXXX,    KC_GRV,    KC_LCBR,     KC_LPRN,     KC_LBRC,            /* SPLIT */             KC_RBRC,    KC_RPRN,    KC_RCBR,    KC_AT,    KC_TILD,     XXXXXXX,     /* # */
 /* 4 */ KC_TILD,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,   /* SPLIT */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    _______,    KC_HASH,    /* # */
 /* Special */                            QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,            KC_ENT, MO(_RAISE), OSL(_RAISE),  XXXXXXX,  XXXXXXX
 ),
