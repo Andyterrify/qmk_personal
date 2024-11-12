@@ -3,7 +3,7 @@
 
 #pragma once
 
-#define MASTER_RIGHT
+#define MASTER_LEFT
 
 #define TRI_LAYER_LOWER_LAYER 2
 #define TRI_LAYER_RAISE_LAYER 3
