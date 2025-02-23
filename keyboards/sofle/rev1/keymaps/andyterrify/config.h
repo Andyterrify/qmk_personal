@@ -11,6 +11,7 @@
 
 #define CAPS_WORD_INVERT_ON_SHIFT
 #define CAPS_WORD_IDLE_TIMEOUT 3000  // 3 seconds.
+
 #define DEBOUNCE 5
 
 #define TAPPING_TERM 125

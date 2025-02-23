@@ -3,7 +3,7 @@ CONVERT_TO=elite_pi
 
 CAPS_WORD_ENABLE = yes
 
-DEBOUNCE_TYPE = sym_defer_pr
+DEBOUNCE_TYPE = sym_eager_pk
 WPM_ENABLE = yes
 
 DYNAMIC_TAPPING_TERM_ENABLE=yes
