@@ -3,7 +3,8 @@
 
 #pragma once
 
-#define MASTER_LEFT
+/*#define MASTER_LEFT*/
+#define MASTER_RIGHT
 
 #define TRI_LAYER_LOWER_LAYER 2
 #define TRI_LAYER_RAISE_LAYER 3
@@ -14,12 +15,12 @@
 
 #define DEBOUNCE 5
 
-#define TAPPING_TERM 125
-#define TAPPING_TERM_PER_KEY
+#define TAPPING_TERM 130
+/*#define HOLD_ON_OTHER_KEY_PRESS*/
 
 #define USB_POLLING_INTERVAL_MS 1
 
-#define FORCE_NKRO
+/*#define FORCE_NKRO*/
 
 #define OLED_BRIGHTNESS 128
 #define OLED_TIMEOUT 30000
