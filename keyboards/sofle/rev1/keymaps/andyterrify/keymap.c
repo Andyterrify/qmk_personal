@@ -14,8 +14,9 @@ enum sofle_layers {
     _BASE,
     _LOWER,
     _RAISE,
-    _GAME,
     _ADJUST,
+
+    _GAME,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -104,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                                 `----------------------------------'           '------''---------------------------'
  */
   [_ADJUST] = LAYOUT(
-/* 1 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
+/* 1 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             DT_UP,    DT_DOWN,    DT_PRNT,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
 /* 1 */ KC_TILD,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,              /* SPLIT */             KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     /* # */
 /* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    DF(_GAME),    KC_LEFT,    KC_DOWN,            /* SPLIT */             KC_LEFT,    KC_DOWN,    KC_UP,    KC_RGHT,    KC_MUTE,    XXXXXXX,    /* # */
 /* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,   /* SPLIT */ XXXXXXX,    XXXXXXX,    KC_MPRV,    KC_MPLY,    KC_MNXT,    XXXXXXX,    XXXXXXX,    /* # */
