@@ -17,6 +17,7 @@ enum sofle_layers {
     _ADJUST,
 
     _GAME,
+    _GAME_NUMBER,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -126,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_ADJUST] = LAYOUT(
 /* 1 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,            /* SPLIT */             DT_UP,    DT_DOWN,    DT_PRNT,    XXXXXXX,    XXXXXXX,    XXXXXXX,    /* # */
 /* 1 */ KC_TILD,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,              /* SPLIT */             KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     /* # */
-/* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    DF(_GAME),    KC_LEFT,    KC_DOWN,            /* SPLIT */             KC_LEFT,    KC_DOWN,    KC_UP,    KC_RGHT,    KC_MUTE,    XXXXXXX,    /* # */
+/* 3 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    TG(_GAME),    KC_LEFT,    KC_DOWN,            /* SPLIT */             KC_LEFT,    KC_DOWN,    KC_UP,    KC_RGHT,    KC_MUTE,    XXXXXXX,    /* # */
 /* 4 */ XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, XXXXXXX,   /* SPLIT */ XXXXXXX,    XXXXXXX,    KC_MPRV,    KC_MPLY,    KC_MNXT,    XXXXXXX,    XXXXXXX,    /* # */
 /* Special */                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        /* SPLIT */     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX                                     /* # */
   ),
@@ -147,13 +148,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                                             `----------------------------------'           '------''---------------------------'
  */
 
-[_GAME] = LAYOUT(
-/* 1 */ QK_GESC,    KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           /* SPLIT */             KC_6,   KC_7,           KC_8,           KC_9,           KC_0,               KC_BSPC, /* # */
-/* 2 */ KC_TAB,     KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           /* SPLIT */             KC_Y,   KC_U,           KC_I,           KC_O,           KC_P,               XXXXXXX, /* # */
-/* 3 */ KC_LSFT,     KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           /* SPLIT */             KC_H,   KC_J,           KC_K,           KC_L,           KC_SCLN,            KC_QUOT, /* # */
-/* 4 */ KC_LCTL,    KC_Z,           KC_X,           KC_C,           KC_V,           KC_B, KC_MUTE,  /* SPLIT */ XXXXXXX,    KC_N,   KC_M,           KC_COMM,        KC_DOT,         KC_SLSH,            KC_HASH, /* # */
-/* Special */                                   XXXXXXX, XXXXXXX, KC_LALT, XXXXXXX,   KC_SPC,     /* SPLIT */     KC_ENT, MO(_RAISE), XXXXXXX, XXXXXXX, XXXXXXX
-    ),
+[_GAME] = LAYOUT_some(
+  QK_GESC,    KC_1,           KC_2,           KC_3,           KC_4,           KC_5,
+  KC_TAB,     KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,
+  KC_LSFT,     KC_A,           KC_S,           KC_D,           KC_F,           KC_G,
+  KC_LCTL,    KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,
+        XXXXXXX, KC_LALT, OSL(_GAME_NUMBER), MO(_RAISE),   KC_SPC, KC_MUTE,
+
+  KC_6,   KC_7,           KC_8,           KC_9,           KC_0,               KC_BSPC,
+  KC_Y,   KC_U,           KC_I,           KC_O,           KC_P,               XXXXXXX,
+  KC_H,   KC_J,           KC_K,           KC_L,           KC_SCLN,            KC_QUOT,
+  KC_N,   KC_M,           KC_COMM,        KC_DOT,         KC_SLSH,            KC_HASH,
+        XXXXXXX, KC_ENT, MO(_RAISE), XXXXXXX, XXXXXXX, TG(_GAME)
+),
+
+[_GAME_NUMBER] = LAYOUT_some(
+  _______,    _______,    _______,    _______,    _______,    _______,
+  _______,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,
+  _______,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,
+  _______,    KC_1,       KC_2,       KC_3,       KC_4,       KC_5,
+        XXXXXXX, KC_LALT, XXXXXXX, XXXXXXX,   KC_SPC, KC_MUTE,
+
+  _______,    _______,    _______,    _______,    _______,    _______,
+  KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       _______,
+  KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       _______,
+  KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       _______,
+        XXXXXXX, KC_ENT, MO(_RAISE), XXXXXXX, XXXXXXX, XXXXXXX
+),
 
 };
 
@@ -204,7 +225,10 @@ static void render_left_oled(void) {
             oled_write_P(PSTR("Adj\n"), false);
             break;
         case _GAME:
-            oled_write_P(PSTR("Game"), false);
+            oled_write_P(PSTR("GAME"), false);
+            break;
+        case _GAME_NUMBER:
+            oled_write_P(PSTR("GNUM"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
