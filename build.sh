@@ -33,7 +33,7 @@ fi
 pushd "$TMP"
 
 echo "Cleaning"
-qmk clean --all
+# qmk clean --all
 
 rm -rf keyboards
 cp -r $QMK_USERDIR/keyboards ./keyboards
