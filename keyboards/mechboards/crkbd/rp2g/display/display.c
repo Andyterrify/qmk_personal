@@ -38,26 +38,26 @@ uint8_t currScreen   = 0xFF;
 
 void display_housekeeping_task(void) {
     // Update WPM every 5 seconds
-    if (timer_elapsed(timer) > 1000 && !updating_wpm && (currScreen == 0x00 || currScreen == 0x01)) {
-        updating_wpm = true;
-        timer        = timer_read();
-        lastwpm      = currwpm;
-        // currwpm      = get_current_wpm();
-        currwpm      = 0;
-        // If current WPM is the same as the last WPM, we will update the chart with the same value.
-        // Once we have the chart filled completly with the same one we stop updating it.
-        if (currwpm == lastwpm) {
-            count++;
-            if (count < vals) {
-                lv_chart_set_next_value(chart, ser, currwpm);
-            }
-        } else {
-            count = 0;
-            lv_label_set_text_fmt(label_wpm, "WPM:%d", currwpm);
-            lv_chart_set_next_value(chart, ser, currwpm);
-        }
-        updating_wpm = false;
-    }
+    // if (timer_elapsed(timer) > 1000 && !updating_wpm && (currScreen == 0x00 || currScreen == 0x01)) {
+    //     updating_wpm = true;
+    //     timer        = timer_read();
+    //     lastwpm      = currwpm;
+    //     // currwpm      = get_current_wpm();
+    //     currwpm      = 0;
+    //     // If current WPM is the same as the last WPM, we will update the chart with the same value.
+    //     // Once we have the chart filled completly with the same one we stop updating it.
+    //     if (currwpm == lastwpm) {
+    //         count++;
+    //         if (count < vals) {
+    //             lv_chart_set_next_value(chart, ser, currwpm);
+    //         }
+    //     } else {
+    //         count = 0;
+    //         lv_label_set_text_fmt(label_wpm, "WPM:%d", currwpm);
+    //         lv_chart_set_next_value(chart, ser, currwpm);
+    //     }
+    //     updating_wpm = false;
+    // }
 
     // Update the layer button matrix to show selected layer
     // As we have lv_btnmatrix_set_one_checked true, it will uncheck the last one and check the new one
