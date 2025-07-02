@@ -40,7 +40,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define LCD_OFFSET_Y 1
 #define LCD_INVERT_COLOUR
 
-#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 0
+#define QUANTUM_PAINTER_DISPLAY_TIMEOUT 30000
+#define QUANTUM_PAINTER_TASK_THROTTLE 2
 
 // QP Configuration
 #define QUANTUM_PAINTER_SUPPORTS_NATIVE_COLORS TRUE

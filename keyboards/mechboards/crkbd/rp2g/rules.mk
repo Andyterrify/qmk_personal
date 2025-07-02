@@ -5,13 +5,14 @@ CONSOLE_ENABLE = yes
 WPM_ENABLE = no
 
 
+SRC += display/testing.c
 # SRC += gfx/mb.qgf.c
-SRC += gfx/ezgif.c
-SRC += display/display.c
-SRC += display/screens.c
-SRC += display/styles.c
-SRC += display/pixellari_24.c
+# SRC += gfx/ezgif.c
+# SRC += display/display.c
+# SRC += display/screens.c
+# SRC += display/styles.c
+# SRC += display/pixellari_24.c
 SRC += display/pixellari_18.c
-SRC += display/pixellari_14.c
+# SRC += display/pixellari_14.c
 
 SERIAL_DRIVER = vendor

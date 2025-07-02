@@ -20,20 +20,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "qp.h"
 #include "qp_comms.h"
 #include "qp_st77xx_opcodes.h"
-#include "gfx/mb.qgf.h"
+// #include "gfx/mb.qgf.h"
 #include "qp_lvgl.h"
 #include "printf.h"
-#include "display/display.h"
+// #include "display/display.h"
+#include "display/testing.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Init board:
 // - Draw logo
 
+// https://docs.qmk.fm/custom_quantum_functions#keyboard-pre-initialization-code
 void keyboard_post_init_kb(void) {
     display_init();
-    keyboard_post_init_user();
 }
 
-void housekeeping_task_kb(void) {
-    display_housekeeping_task();
-}
+// void keyboard_post_init_kb(void) {
+//     display_init();
+//     keyboard_post_init_user();
+// }
+
+// void housekeeping_task_kb(void) {
+//     display_housekeeping_task();
+// }

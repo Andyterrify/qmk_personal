@@ -1,13 +1,13 @@
 #!/bin/bash
 # vim: set ft=sh ts=4 sw=4 noexpandtab
 
-QMK_FIRMWARE=/home/avasile/projects/qmk_firmware
+# QMK_FIRMWARE=/home/avasile/projects/qmk_firmware
 
 
 # this is from this repo https://github.com/MechboardsLTD/qmk_firmware/tree/corne_max#
 # on branch corne_max. by the time you're reading this this should have been upstreamed into qmk (hopefully)
-QMK_FIRMWARE_MECHBOARDS=/home/avasile/projects/qmk_firmware_mechboards
-QMK_USERDIR=/home/avasile/projects/qmk_userspace
+QMK_FIRMWARE=/home/avasile/projects/qmk_firmware
+QMK_USERDIR=/home/avasile/projects/qmk_personal
 TMP="/tmp/qmk_build"
 
 CORNE_KB="mechboards/crkbd/rp2g"
@@ -27,7 +27,7 @@ args="$@"
 if [ -d "$TMP" ]; then
     echo "$TMP already present, reusing"
 else
-    cp -r $QMK_FIRMWARE_MECHBOARDS $TMP
+    cp -r $QMK_FIRMWARE $TMP
 fi
 
 pushd "$TMP"

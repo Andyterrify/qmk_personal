@@ -30,7 +30,7 @@ This is a template repository which allows for an external set of QMK keymaps to
 ## Howto build locally
 
 1. Run the normal `qmk setup` procedure if you haven't already done so -- see [QMK Docs](https://docs.qmk.fm/#/newbs) for details.
-1. Fork this repository
+1. Fork this [repository](git@github.com:MechboardsLTD/qmk_firmware.git) and then run `qmk git-submodule -f`
 1. Clone your fork to your local machine
 1. `cd` into this repository's clone directory
 1. Set global userspace path: `qmk config user.overlay_dir="$(realpath .)"` -- you MUST be located in the cloned userspace location for this to work correctly
