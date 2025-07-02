@@ -10,7 +10,7 @@ QMK_FIRMWARE=/home/avasile/projects/qmk_firmware
 QMK_USERDIR=/home/avasile/projects/qmk_personal
 TMP="/tmp/qmk_build"
 
-CORNE_KB="mechboards/crkbd/rp2g"
+CORNE_KB="andyterrify/crkbd/max"
 SOFLE_KB=""
 
 KM="andyterrify"
