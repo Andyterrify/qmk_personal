@@ -1,5 +1,5 @@
 MOUSEKEY_ENABLE = no     # Mouse keys
-VIA_ENABLE      = no    # Enable VIA
+VIA_ENABLE      = no     # Disable VIA
 LTO_ENABLE      = yes
 RAW_ENABLE      = yes
 

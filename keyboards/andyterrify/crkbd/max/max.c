@@ -32,15 +32,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // - Draw logo
 
 // https://docs.qmk.fm/custom_quantum_functions#keyboard-pre-initialization-code
+// native fn, used to init keyboard
 void keyboard_post_init_kb(void) {
     display_init();
 }
 
-// void keyboard_post_init_kb(void) {
-//     display_init();
-//     keyboard_post_init_user();
-// }
-
+// native fn, used to mainain keyboard
 // void housekeeping_task_kb(void) {
 //     display_housekeeping_task();
 // }
