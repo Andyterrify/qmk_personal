@@ -41,6 +41,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #    define RGBLIGHT_VAL_STEP 17
 // #endif
 
+#define RGB_MATRIX_TYPING_HEATMAP_SPREAD 60
+#define RGB_MATRIX_TIMEOUT 60000
+#define RGB_MATRIX_SLEEP
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
+#define SPLIT_TRANSPORT_MIRROR
+#define RGBLIGHT_HUE_STEP 10
+#define RGBLIGHT_SAT_STEP 17
+#define RGBLIGHT_VAL_STEP 17
+
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
 
 #define TRI_LAYER_LOWER_LAYER 2
